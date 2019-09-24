@@ -1,0 +1,18 @@
+---
+- hosts: ubuntu
+  remote_user: ubuntu
+  become: yes
+
+  tasks:
+  - name: Atualizando o repo do zabbix
+    shell: cd /etc/zabbix/ ; wget https://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-2+xenial_all.deb ; dpkg -i zabbix-release_4.2-2+xenial_all.deb ; apt update      
+
+  - name: Atualizacao do zabbix
+    apt:
+      name: zabbix-agent 
+      state: latest
+
+  - service: 
+       name: zabbix-agent
+       state: started
+
