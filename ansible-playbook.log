@@ -1,0 +1,307 @@
+gomes@BIO-01637:~/git/ansible-playbooks$ ansible-playbook Zabbix_agent_amazon_6.yml --private-key /home/rgomes/Documents/ANOTACOES/prod.pem
+
+PLAY [amazon_6] ********************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] *************************************************************************************************************************************************************************************
+ok: [172.16.252.49]
+ok: [172.16.252.23]
+ok: [172.16.252.127]
+ok: [172.16.250.186]
+ok: [172.16.252.97]
+ok: [172.16.252.187]
+ok: [172.16.250.80]
+ok: [172.16.250.92]
+ok: [172.16.250.128]
+ok: [172.16.251.83]
+ok: [172.16.245.97]
+ok: [172.16.2.6]
+ok: [172.16.252.118]
+ok: [172.16.251.217]
+ok: [172.16.251.77]
+ok: [172.16.250.43]
+ok: [172.16.252.117]
+ok: [172.16.250.41]
+ok: [172.16.252.110]
+ok: [172.16.252.133]
+ok: [172.16.252.24]
+ok: [172.16.250.23]
+ok: [172.16.1.53]
+ok: [172.16.252.111]
+ok: [172.16.252.181]
+ok: [172.16.250.239]
+ok: [172.16.252.216]
+ok: [172.16.251.214]
+ok: [172.16.252.206]
+ok: [172.16.250.121]
+ok: [172.16.251.25]
+ok: [172.16.251.112]
+ok: [172.16.250.175]
+ok: [172.16.254.110]
+fatal: [172.16.254.82]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 172.16.254.82 port 22: Connection timed out\r\n", "unreachable": true}
+ok: [172.16.250.104]
+ok: [172.16.252.52]
+ok: [172.16.250.116]
+ok: [172.16.251.224]
+ok: [172.16.251.28]
+ok: [172.16.250.63]
+ok: [172.16.250.143]
+ok: [172.16.250.126]
+ok: [172.16.250.101]
+ok: [172.16.250.18]
+ok: [172.16.250.198]
+
+TASK [Atualizando o repo do zabbix] ************************************************************************************************************************************************************************
+ok: [172.16.252.23]
+ok: [172.16.252.127]
+ok: [172.16.252.97]
+ok: [172.16.250.186]
+ok: [172.16.252.187]
+ok: [172.16.250.80]
+ok: [172.16.250.128]
+changed: [172.16.250.92]
+changed: [172.16.252.49]
+ok: [172.16.251.83]
+ok: [172.16.252.118]
+changed: [172.16.245.97]
+ok: [172.16.251.77]
+changed: [172.16.251.217]
+changed: [172.16.252.117]
+changed: [172.16.2.6]
+ok: [172.16.250.43]
+ok: [172.16.252.133]
+ok: [172.16.252.110]
+ok: [172.16.250.23]
+changed: [172.16.250.41]
+ok: [172.16.252.24]
+fatal: [172.16.252.111]: FAILED! => {"changed": false, "msg": "The Python 2 bindings for rpm are needed for this module. If you require Python 3 support use the `dnf` Ansible module instead.. The Python 2 yum module is needed for this module. If you require Python 3 support use the `dnf` Ansible module instead."}
+ok: [172.16.252.181]
+ok: [172.16.1.53]
+ok: [172.16.252.216]
+changed: [172.16.250.239]
+ok: [172.16.251.214]
+ok: [172.16.250.121]
+fatal: [172.16.251.25]: FAILED! => {"changed": false, "msg": "The Python 2 bindings for rpm are needed for this module. If you require Python 3 support use the `dnf` Ansible module instead.. The Python 2 yum module is needed for this module. If you require Python 3 support use the `dnf` Ansible module instead."}
+changed: [172.16.252.206]
+fatal: [172.16.250.104]: FAILED! => {"changed": false, "msg": "The Python 2 bindings for rpm are needed for this module. If you require Python 3 support use the `dnf` Ansible module instead.. The Python 2 yum module is needed for this module. If you require Python 3 support use the `dnf` Ansible module instead."}
+ok: [172.16.251.112]
+changed: [172.16.254.110]
+changed: [172.16.250.175]
+changed: [172.16.252.52]
+ok: [172.16.250.116]
+changed: [172.16.251.224]
+changed: [172.16.251.28]
+changed: [172.16.250.143]
+changed: [172.16.250.63]
+changed: [172.16.250.101]
+changed: [172.16.250.126]
+ok: [172.16.250.198]
+ok: [172.16.250.18]
+
+TASK [Limpando o repo] *************************************************************************************************************************************************************************************
+ [WARNING]: Consider using the yum module rather than running yum.  If you need to use command because yum is insufficient you can add warn=False to this command task or set command_warnings=False in
+ansible.cfg to get rid of this message.
+
+changed: [172.16.250.186]
+changed: [172.16.252.23]
+changed: [172.16.252.49]
+changed: [172.16.252.97]
+changed: [172.16.252.127]
+changed: [172.16.250.92]
+changed: [172.16.250.80]
+changed: [172.16.250.128]
+changed: [172.16.251.83]
+changed: [172.16.252.187]
+changed: [172.16.2.6]
+changed: [172.16.252.118]
+changed: [172.16.245.97]
+changed: [172.16.251.217]
+changed: [172.16.251.77]
+changed: [172.16.252.117]
+changed: [172.16.250.41]
+changed: [172.16.250.43]
+changed: [172.16.252.133]
+changed: [172.16.252.110]
+changed: [172.16.250.23]
+changed: [172.16.252.24]
+changed: [172.16.1.53]
+changed: [172.16.252.181]
+changed: [172.16.252.216]
+changed: [172.16.250.239]
+changed: [172.16.252.206]
+changed: [172.16.251.214]
+changed: [172.16.250.121]
+changed: [172.16.250.175]
+changed: [172.16.251.112]
+changed: [172.16.254.110]
+changed: [172.16.252.52]
+changed: [172.16.250.116]
+changed: [172.16.251.224]
+changed: [172.16.250.63]
+changed: [172.16.251.28]
+changed: [172.16.250.143]
+changed: [172.16.250.126]
+changed: [172.16.250.101]
+changed: [172.16.250.18]
+changed: [172.16.250.198]
+
+TASK [Backup do diretorio do Zabbix] ***********************************************************************************************************************************************************************
+changed: [172.16.252.23]
+changed: [172.16.252.127]
+changed: [172.16.250.186]
+changed: [172.16.252.49]
+changed: [172.16.252.97]
+changed: [172.16.252.187]
+changed: [172.16.250.92]
+changed: [172.16.250.80]
+changed: [172.16.250.128]
+changed: [172.16.251.83]
+changed: [172.16.252.118]
+ok: [172.16.245.97]
+changed: [172.16.2.6]
+changed: [172.16.251.217]
+changed: [172.16.251.77]
+ok: [172.16.252.117]
+changed: [172.16.250.43]
+changed: [172.16.250.41]
+changed: [172.16.252.133]
+changed: [172.16.252.110]
+changed: [172.16.252.24]
+changed: [172.16.250.23]
+changed: [172.16.1.53]
+changed: [172.16.252.216]
+changed: [172.16.252.181]
+changed: [172.16.250.239]
+changed: [172.16.251.214]
+changed: [172.16.252.206]
+changed: [172.16.250.121]
+changed: [172.16.250.175]
+changed: [172.16.251.112]
+ok: [172.16.254.110]
+ok: [172.16.252.52]
+changed: [172.16.250.116]
+ok: [172.16.251.224]
+changed: [172.16.250.63]
+ok: [172.16.250.143]
+changed: [172.16.251.28]
+changed: [172.16.250.126]
+ok: [172.16.250.101]
+changed: [172.16.250.198]
+ok: [172.16.250.18]
+
+TASK [Atualizacao do Zabbix agent] *************************************************************************************************************************************************************************
+ok: [172.16.252.97]
+ok: [172.16.250.186]
+ok: [172.16.252.23]
+ok: [172.16.252.127]
+fatal: [172.16.250.92]: FAILED! => {"changed": false, "msg": "https://_:DcIYNLNhS3i7oQ1jNFYNRw@packages.instana.io/agent/rpm/generic/x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 401 - Unauthorized\nTrying other mirror.\n\n\n One of the configured repositories failed (Instana),\n and yum doesn't have enough cached data to continue. At this point the only\n safe thing yum can do is fail. There are a few ways to work \"fix\" this:\n\n     1. Contact the upstream for the repository and get them to fix the problem.\n\n     2. Reconfigure the baseurl/etc. for the repository, to point to a working\n        upstream. This is most often useful if you are using a newer\n        distribution release than is supported by the repository (and the\n        packages for the previous distribution release still work).\n\n     3. Disable the repository, so yum won't use it by default. Yum will then\n        just ignore the repository until you permanently enable it again or use\n        --enablerepo for temporary usage:\n\n            yum-config-manager --disable instana-agent\n\n     4. Configure the failing repository to be skipped, if it is unavailable.\n        Note that yum will try to contact the repo. when it runs most commands,\n        so will have to try and fail each time (and thus. yum will be be much\n        slower). If it is a very temporary problem though, this is often a nice\n        compromise:\n\n            yum-config-manager --save --setopt=instana-agent.skip_if_unavailable=true\n\nfailure: repodata/repomd.xml from instana-agent: [Errno 256] No more mirrors to try.\nhttps://_:DcIYNLNhS3i7oQ1jNFYNRw@packages.instana.io/agent/rpm/generic/x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 401 - Unauthorized\n", "rc": 1, "results": []}
+changed: [172.16.252.49]
+ok: [172.16.252.187]
+ok: [172.16.250.80]
+ok: [172.16.250.128]
+ok: [172.16.252.118]
+ok: [172.16.251.83]
+changed: [172.16.245.97]
+ok: [172.16.251.77]
+changed: [172.16.251.217]
+changed: [172.16.252.117]
+changed: [172.16.2.6]
+ok: [172.16.250.43]
+ok: [172.16.252.133]
+ok: [172.16.252.24]
+ok: [172.16.250.23]
+ok: [172.16.252.110]
+changed: [172.16.250.41]
+ok: [172.16.252.181]
+ok: [172.16.1.53]
+changed: [172.16.250.239]
+ok: [172.16.252.216]
+fatal: [172.16.252.206]: FAILED! => {"changed": false, "msg": "https://_:DcIYNLNhS3i7oQ1jNFYNRw@packages.instana.io/agent/rpm/generic/x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 401 - Unauthorized\nTrying other mirror.\n\n\n One of the configured repositories failed (Instana),\n and yum doesn't have enough cached data to continue. At this point the only\n safe thing yum can do is fail. There are a few ways to work \"fix\" this:\n\n     1. Contact the upstream for the repository and get them to fix the problem.\n\n     2. Reconfigure the baseurl/etc. for the repository, to point to a working\n        upstream. This is most often useful if you are using a newer\n        distribution release than is supported by the repository (and the\n        packages for the previous distribution release still work).\n\n     3. Disable the repository, so yum won't use it by default. Yum will then\n        just ignore the repository until you permanently enable it again or use\n        --enablerepo for temporary usage:\n\n            yum-config-manager --disable instana-agent\n\n     4. Configure the failing repository to be skipped, if it is unavailable.\n        Note that yum will try to contact the repo. when it runs most commands,\n        so will have to try and fail each time (and thus. yum will be be much\n        slower). If it is a very temporary problem though, this is often a nice\n        compromise:\n\n            yum-config-manager --save --setopt=instana-agent.skip_if_unavailable=true\n\nfailure: repodata/repomd.xml from instana-agent: [Errno 256] No more mirrors to try.\nhttps://_:DcIYNLNhS3i7oQ1jNFYNRw@packages.instana.io/agent/rpm/generic/x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 401 - Unauthorized\n", "rc": 1, "results": []}
+ok: [172.16.251.214]
+ok: [172.16.250.121]
+changed: [172.16.254.110]
+fatal: [172.16.252.52]: FAILED! => {"changed": false, "msg": "https://_:B9W5zRFxTjShE-MKYNYEPQ@packages.instana.io/agent/generic/x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 401 - Unauthorized\nTrying other mirror.\n\n\n One of the configured repositories failed (Instana),\n and yum doesn't have enough cached data to continue. At this point the only\n safe thing yum can do is fail. There are a few ways to work \"fix\" this:\n\n     1. Contact the upstream for the repository and get them to fix the problem.\n\n     2. Reconfigure the baseurl/etc. for the repository, to point to a working\n        upstream. This is most often useful if you are using a newer\n        distribution release than is supported by the repository (and the\n        packages for the previous distribution release still work).\n\n     3. Disable the repository, so yum won't use it by default. Yum will then\n        just ignore the repository until you permanently enable it again or use\n        --enablerepo for temporary usage:\n\n            yum-config-manager --disable instana-agent\n\n     4. Configure the failing repository to be skipped, if it is unavailable.\n        Note that yum will try to contact the repo. when it runs most commands,\n        so will have to try and fail each time (and thus. yum will be be much\n        slower). If it is a very temporary problem though, this is often a nice\n        compromise:\n\n            yum-config-manager --save --setopt=instana-agent.skip_if_unavailable=true\n\nfailure: repodata/repomd.xml from instana-agent: [Errno 256] No more mirrors to try.\nhttps://_:B9W5zRFxTjShE-MKYNYEPQ@packages.instana.io/agent/generic/x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 401 - Unauthorized\n", "rc": 1, "results": []}
+changed: [172.16.250.175]
+ok: [172.16.251.112]
+ok: [172.16.250.116]
+changed: [172.16.251.224]
+ok: [172.16.250.121]
+changed: [172.16.254.110]
+fatal: [172.16.252.52]: FAILED! => {"changed": false, "msg": "https://_:B9W5zRFxTjShE-MKYNYEPQ@packages.instana.io/agent/generic/x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 401 - Unauthorized\nTrying other mirror.\n\n\n One of the configured repositories failed (Instana),\n and yum doesn't have enough cached data to continue. At this point the only\n safe thing yum can do is fail. There are a few ways to work \"fix\" this:\n\n     1. Contact the upstream for the repository and get them to fix the problem.\n\n     2. Reconfigure the baseurl/etc. for the repository, to point to a working\n        upstream. This is most often useful if you are using a newer\n        distribution release than is supported by the repository (and the\n        packages for the previous distribution release still work).\n\n     3. Disable the repository, so yum won't use it by default. Yum will then\n        just ignore the repository until you permanently enable it again or use\n        --enablerepo for temporary usage:\n\n            yum-config-manager --disable instana-agent\n\n     4. Configure the failing repository to be skipped, if it is unavailable.\n        Note that yum will try to contact the repo. when it runs most commands,\n        so will have to try and fail each time (and thus. yum will be be much\n        slower). If it is a very temporary problem though, this is often a nice\n        compromise:\n\n            yum-config-manager --save --setopt=instana-agent.skip_if_unavailable=true\n\nfailure: repodata/repomd.xml from instana-agent: [Errno 256] No more mirrors to try.\nhttps://_:B9W5zRFxTjShE-MKYNYEPQ@packages.instana.io/agent/generic/x86_64/repodata/repomd.xml: [Errno 14] HTTPS Error 401 - Unauthorized\n", "rc": 1, "results": []}
+changed: [172.16.250.175]
+ok: [172.16.251.112]
+ok: [172.16.250.116]
+changed: [172.16.251.224]
+changed: [172.16.250.63]
+changed: [172.16.251.28]
+changed: [172.16.250.143]
+changed: [172.16.250.101]
+changed: [172.16.250.126]
+ok: [172.16.250.18]
+ok: [172.16.250.198]
+RUNNING HANDLER [Restart Zabbix-agent] *********************************************************************************************************************************************************************
+changed: [172.16.251.217]
+changed: [172.16.245.97]
+changed: [172.16.252.117]
+changed: [172.16.2.6]
+changed: [172.16.252.49]
+changed: [172.16.254.110]
+changed: [172.16.251.224]
+changed: [172.16.250.239]
+changed: [172.16.250.175]
+changed: [172.16.250.41]
+changed: [172.16.250.143]
+changed: [172.16.250.63]
+changed: [172.16.250.101]
+changed: [172.16.251.28]
+changed: [172.16.250.126]
+	to retry, use: --limit @/home/rgomes/git/ansible-playbooks/Zabbix_agent_amazon_6.retry
+
+PLAY RECAP *************************************************************************************************************************************************************************************************
+172.16.1.53                : ok=5    changed=2    unreachable=0    failed=0   
+172.16.2.6                 : ok=6    changed=5    unreachable=0    failed=0   
+172.16.245.97              : ok=6    changed=4    unreachable=0    failed=0   
+172.16.250.101             : ok=6    changed=4    unreachable=0    failed=0   
+172.16.250.104             : ok=1    changed=0    unreachable=0    failed=1   
+172.16.250.116             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.250.121             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.250.126             : ok=6    changed=5    unreachable=0    failed=0   
+172.16.250.128             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.250.143             : ok=6    changed=4    unreachable=0    failed=0   
+172.16.250.175             : ok=6    changed=5    unreachable=0    failed=0   
+172.16.250.18              : ok=5    changed=1    unreachable=0    failed=0   
+172.16.250.186             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.250.198             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.250.23              : ok=5    changed=2    unreachable=0    failed=0   
+172.16.250.239             : ok=6    changed=5    unreachable=0    failed=0   
+172.16.250.41              : ok=6    changed=5    unreachable=0    failed=0   
+172.16.250.43              : ok=5    changed=2    unreachable=0    failed=0   
+172.16.250.63              : ok=6    changed=5    unreachable=0    failed=0   
+172.16.250.80              : ok=5    changed=2    unreachable=0    failed=0   
+172.16.250.92              : ok=4    changed=3    unreachable=0    failed=1   
+172.16.251.112             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.251.214             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.251.217             : ok=6    changed=5    unreachable=0    failed=0   
+172.16.251.224             : ok=6    changed=4    unreachable=0    failed=0   
+172.16.251.25              : ok=1    changed=0    unreachable=0    failed=1   
+172.16.251.28              : ok=6    changed=5    unreachable=0    failed=0   
+172.16.251.77              : ok=5    changed=2    unreachable=0    failed=0   
+172.16.251.83              : ok=5    changed=2    unreachable=0    failed=0   
+172.16.252.110             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.252.111             : ok=1    changed=0    unreachable=0    failed=1   
+172.16.252.117             : ok=6    changed=4    unreachable=0    failed=0   
+172.16.252.118             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.252.127             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.252.133             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.252.181             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.252.187             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.252.206             : ok=4    changed=3    unreachable=0    failed=1   
+172.16.252.216             : ok=5    changed=2    unreachable=0    failed=0   
+172.16.252.23              : ok=5    changed=2    unreachable=0    failed=0   
+172.16.252.24              : ok=5    changed=2    unreachable=0    failed=0   
+172.16.252.49              : ok=6    changed=5    unreachable=0    failed=0   
+172.16.252.52              : ok=4    changed=2    unreachable=0    failed=1   
+172.16.252.97              : ok=5    changed=2    unreachable=0    failed=0   
+172.16.254.110             : ok=6    changed=4    unreachable=0    failed=0   
+172.16.254.82              : ok=0    changed=0    unreachable=1    failed=0 
+
+
