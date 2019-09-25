@@ -1,18 +1,41 @@
 ---
-- hosts: ubuntu
+- hosts: ubuntu_16
   remote_user: ubuntu
   become: yes
 
   tasks:
   - name: Atualizando o repo do zabbix
-    shell: cd /etc/zabbix/ ; wget https://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-2+xenial_all.deb ; dpkg -i zabbix-release_4.2-2+xenial_all.deb ; apt update      
-
+    apt:
+      deb: https://repo.zabbix.com/zabbix/4.2/ubuntu/pool/main/z/zabbix-release/zabbix-release_4.2-2+xenial_all.deb
+      state: present      
+      cache_updated: true
+  
+  - name: Gerando backup do /etc/zabbix
+    archive: 
+      path: /etc/zabbix
+      dest: /root/zabbix.tar.gz
+         
   - name: Atualizacao do zabbix
     apt:
       name: zabbix-agent 
       state: latest
+    notify: 
+      - Restart Zabbix-agent
+      
+  - name: Copiando arquivos de configuracao do zabbix
+    copy:
+      src: /etc/zabbix/zabbix_agentd.conf.d/*
+      dest: /etc/zabbix/zabbix_agentd.d/
+      remote_src: yes
+  
+  - name: Inserindo o IP do server no zabbix agent
+     command: sed -i 's/Server=127.0.0.1/Server=zabbix.cloud.bionexo.com.br,172.16.250.219,172.16.250.249/g' /etc/zabbix/zabbix_agentd.conf 
 
-  - service: 
-       name: zabbix-agent
-       state: started
+  - name: Inserindo o IP ServerActive no zabbix agent
+     command: sed -i 's/ServerActive=127.0.0.1/ServerActive=zabbix.cloud.bionexo.com.br,172.16.250.219,172.16.250.249/g' /etc/zabbix/zabbix_agentd.conf
 
+  handlers:
+    - name: Restart Zabbix-agent
+      service:
+        name: zabbix-agent
+        state: restarted

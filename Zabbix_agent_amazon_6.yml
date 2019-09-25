@@ -24,7 +24,6 @@
     notify: 
       - Restart Zabbix-agent
 
-
   handlers:
     - name: Restart Zabbix-agent
       service:

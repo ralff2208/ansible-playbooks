@@ -4,5 +4,6 @@
 
   tasks:
   - name: Teste Playbook
-    shell: echo uptime
+    command: uptime
+    command: date
 
