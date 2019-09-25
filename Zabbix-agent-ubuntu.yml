@@ -1,5 +1,5 @@
 ---
-- hosts: ubuntu_16
+- hosts: teste
   remote_user: ubuntu
   become: yes
 
@@ -29,10 +29,10 @@
       remote_src: yes
   
   - name: Inserindo o IP do server no zabbix agent
-     command: sed -i 's/Server=127.0.0.1/Server=zabbix.cloud.bionexo.com.br,172.16.250.219,172.16.250.249/g' /etc/zabbix/zabbix_agentd.conf 
+     command: "sed -i 's/Server=127.0.0.1/Server=zabbix.cloud.bionexo.com.br,172.16.250.219,172.16.250.249/g' /etc/zabbix/zabbix_agentd.conf"
 
   - name: Inserindo o IP ServerActive no zabbix agent
-     command: sed -i 's/ServerActive=127.0.0.1/ServerActive=zabbix.cloud.bionexo.com.br,172.16.250.219,172.16.250.249/g' /etc/zabbix/zabbix_agentd.conf
+     command: "sed -i 's/ServerActive=127.0.0.1/ServerActive=zabbix.cloud.bionexo.com.br,172.16.250.219,172.16.250.249/g' /etc/zabbix/zabbix_agentd.conf"
 
   handlers:
     - name: Restart Zabbix-agent
